@@ -1,0 +1,1 @@
+First we must find the hidden task in the image
