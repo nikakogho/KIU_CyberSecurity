@@ -15,7 +15,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
         </html>
         """)
 
-server_address = ("", 80)
+server_address = ("0.0.0.0", 80)
 httpd = HTTPServer(server_address, SimpleHandler)
 
 print("Serving HTTP on port 80...")
