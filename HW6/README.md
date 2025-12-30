@@ -14,6 +14,9 @@ IP of machine A is `192.168.100.7`
 We check that machine B connects to it just fine
 ![Start B connects to A](images/start_b_to_a.png)
 
+Baseline situation:
+![baseline](images/baseline.png)
+
 ## Attack
 ### SYN Flood
 We will use `hping3` to cause a SYN flood (send handshake request and then don't acknowledge it, many times in a row, to overwhelm the server's ability to receive new requests).
