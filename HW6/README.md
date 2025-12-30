@@ -13,3 +13,6 @@ IP of machine A is `192.168.100.7`
 
 We check that machine B connects to it just fine
 ![Start B connects to A](images/start_b_to_a.png)
+
+Baseline situation:
+![baseline](images/baseline.png)
