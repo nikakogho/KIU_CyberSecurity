@@ -18,6 +18,7 @@ class Handler(BaseHTTPRequestHandler):
 
         if url.path == "/health":
             self._send_json({"ok": True, "time": time.time()})
+            print('health check received')
             return
 
         if url.path == "/work":
@@ -29,6 +30,7 @@ class Handler(BaseHTTPRequestHandler):
             while time.perf_counter() < end:
                 x = (x * 1103515245 + 12345) & 0x7fffffff  # tiny CPU loop
             self._send_json({"worked_ms": ms, "result": x})
+            print(f'work request completed: {ms} ms')
             return
 
         if url.path == "/":

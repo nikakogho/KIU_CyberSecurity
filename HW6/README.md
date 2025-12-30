@@ -28,5 +28,25 @@ Possible reasons:
 1. (Most Likely) Windows Defender stopped SYN flood
 2. Maybe machine A just can't make a strong SYN flood? Unlikely but possible
 
-### SYN flood again but locally
-Now let's try on local
+## Trying on one machine
+Only using one machine now, with IP `192.168.100.6`.
+Hosting this same `server.py` on `0.0.0.0` port 8000.
+
+Baseline test from phone:
+![phone works](images/phone_works.jpg)
+
+From within this same machine we will attack by stress testing with K6 from WSL.
+We create this `stress_test.js` inside WSL:
+![WSL make stress_test file](images/WSL_stress_test_code.png)
+
+Stressed process
+![alt text](images/image.png)
+
+![alt text](images/image-1.png)
+
+![alt text](images/image-2.png)
+
+![alt text](images/image-3.png)
+
+Attempt from phone now fails:
+![phone fails](images/phone_fail.jpg)
