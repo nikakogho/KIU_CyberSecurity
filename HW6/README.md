@@ -1,6 +1,6 @@
 Performing Denial of Service attack on a local computer
 
-Setup:
+## Setup
 I use 2 computers (A and B) on the same network.
 A spins up a server.
 B floods it to take it down.
@@ -13,3 +13,17 @@ IP of machine A is `192.168.100.7`
 
 We check that machine B connects to it just fine
 ![Start B connects to A](images/start_b_to_a.png)
+
+## Attack
+### SYN Flood
+We will use `hping3` to cause a SYN flood (send handshake request and then don't acknowledge it, many times in a row, to overwhelm the server's ability to receive new requests).
+
+Tried this from inside WSL on machine A targeting machine B.
+Embarassingly, this overwhelmed the attacker without affecting machine B.
+
+Possible reasons:
+1. (Most Likely) Windows Defender stopped SYN flood
+2. Maybe machine A just can't make a strong SYN flood? Unlikely but possible
+
+### SYN flood again but locally
+Now let's try on local
